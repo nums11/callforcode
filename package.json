@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/nums11/callforcode/issues"
   },
-  "homepage": "https://github.com/nums11/callforcode#readme"
+  "homepage": "https://github.com/nums11/callforcode#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
