@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Call for code</title>
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Popper JS (for bootstrap) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <!-- JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <!-- jQuery Color Plugin -->
+    <script
+    src="http://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>
+    <!-- jQuery UI -->
+    <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+  	<!-- For graphs -->
+  	<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+  	<!-- Google Maps API -->
+  	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqL9BPCXJK30X3ClP-xSDgQVK4ow3L1CQ&v=3.34&callback=initMap"
+        async defer></script>
+</head>
+<body>
+
+	<div class="container-fluid" id="map"></div>
+
+	<div id="main">
+		
+		<div class="container-fluid" id="navigation">
+			<div class="nav-button" id="econ-btn">Economic</div>
+			<div class="nav-button" id="social-btn">Social</div>
+			<div class="nav-button" id="politic-btn">Political</div>
+		</div>
+
+		<div class="container-fluid" id="info">
+
+			<!-- Econ Info -->
+			
+			<div class="container-fluid info-container" id="econ-info">
+				
+				<div class="container-fluid" id="estimated-costs">
+					Estimated cost of Hurricane Katrina: <span id="katrina-price">$250 Billion</span>
+				</div>
+
+				<div class="container-fluid" id="katrina-graphs">
+					<div class="katrina-graph" id="katrina-cost-graph" style="height: 370px; width: 50%;"></div>
+					<div class="katrina-graph" id="katrina-graph-two" style="height: 370px; width: 49%;"></div>
+				</div>
+
+				<div class="container-fluid" id="katrina-circles">
+				
+					<div class="katrina-circle">113 offshore oil and gas platforms destroyed</div>
+					<div class="katrina-circle">457 oil and gas pipelines spilled</div>
+					<div class="katrina-circle">19% of US oil production damaged</div>
+
+				</div>
+
+				<div class="container-fluid" id="katrina-infos">
+					
+					<div class="katrina-info" id="katrina-info-one">$5 Gallon Gas Prices</div>
+					<div class="katrina-info" id="katrina-info-two">200,000 Homes Destroyed</div>
+
+				</div>
+
+				<div class="container-fluid" id="katrina-gdp">
+					
+					<div id="katrina-gdp-graph" style="height: 370px; width: 100%;"></div>
+
+				</div>
+
+			</div>
+
+			<!-- Social Info -->
+
+			<div class="container-fluid info-container" id="social-info">
+				
+				<div class="container-fluid" id="residents">
+					# of residents displaced: <span id="katrina-residents">770,000</span>
+				</div>
+
+				<div class="container-fluid" id="death-count">
+				
+					<div class="container-fluid katrina-graph" id="katrina-death-graph" style="height: 370px; width: 50%;"></div>
+
+					<div class="container-fluid katrina-graph" id="katrina-death-chart" style="height: 370px; width: 49%;"></div>
+
+				</div>
+
+				<div class="container-fluid" id="katrina-social-facts">
+					
+					<div class="container katrina-social-fact">8,000 animals rescued</div>
+					<div class="container katrina-social-fact">Popularity of name "Katrina" dropped from rank 231 to 815</div>
+					<div class="container katrina-social-fact">600,000 animals killed or left without shelter</div>
+
+				</div>
+
+				<div class="container-fluid" id="katrina-heart-attack">
+					Hospital admissions for heart attacks increased by <span style="font-size:6vmin">31%</span>
+				</div>
+
+				<div class="container-fluid" id="katrina-statistics">
+					
+					<div class="container katrina-statistic">Risk for coronoray artery disease increased by 17%</div>
+					<div class="container katrina-statistic">Risk for diabetes increased by 11%</div>
+					<div class="container katrina-statistic">Risk for high blood pressure increased by 7%</div>
+					<div class="container katrina-statistic">Risk for high levels of cholesterol increased by 14%</div>
+					<div class="container katrina-statistic">Risk for smoking increased by 15%</div>
+
+				</div>
+
+			</div>
+
+
+			<!-- Political Info -->
+
+			<div class="container-fluid info-container" id="political-info">
+				
+				<div class="container-fluid" id="approval-rating" style="height: 370px; width: 100%;"></div>
+
+				<div class="container-fluid" id="louisiana">"Louisiana was projected to be a minority-majority state until Katrina displaced that."</div>
+
+				<div class="container-fluid" id="katrina-political-infos">
+					
+					<div class="container katrina-political-info">Creation of the Disaster Recovery Personal Protection Act of 2006</div>
+					<div class="container katrina-political-info">Significant increases in funding for FEMA</div>
+
+				</div>
+
+			</div>
+
+
+
+		</div>
+
+	</div>
+
+	<style type="text/css">
+		#map{
+			height: 708px;
+			background-image: url('http://media.nola.com/hurricane_katrina/photo/katrina-diaspora-map-c4f4e7f9159a2de0.jpg');
+			background-size: 100%;
+			background-position: center;
+		}
+
+		#main{
+			background: linear-gradient(to bottom right,#595959,#1a1a1a);
+			color: white;
+		}
+
+		#navigation{
+			height: 60px;
+			background-color: white;
+			border-bottom: #cccccc solid thin;
+			border-top: #cccccc solid thin;
+		}
+
+		.nav-button{
+			cursor: pointer;
+			display: inline-block;
+			vertical-align: bottom;
+			text-align: center;
+			border: green solid;
+			height: 40px;
+			width: 100px;
+			padding-top: 5px;
+			margin-top: 10px;
+			margin-left: 70px;
+			color: black;
+		}
+
+		#econ-btn{
+			border: #ff9900 solid;
+		}
+
+		#social-btn{
+			border: #33ccff solid;
+		}
+
+		#politic-btn{
+			border: #ff6699 solid;
+		}
+
+		#info{
+			padding: 10px;
+		}
+
+		#econ-info{
+		}
+
+		#estimated-costs{
+			/*font-size: 40px;*/
+			font-size: 5vmin;
+			text-align: center;
+		}
+
+		#katrina-price{
+			font-size: 6vmin;
+			color: #ff9900;
+			/*font-size: 60px;*/
+		}
+
+		.katrina-graph{
+			display: inline-block;
+			vertical-align: bottom;
+		}
+
+		#katrina-circles{
+			margin-top: 100px;	
+		}
+
+		.katrina-circle{
+			width: 25%;
+			border:  #ff9900 solid;
+			display: inline-block;
+			vertical-align: bottom;
+			border-radius: 100%;
+			text-align: center;
+			/*font-size: 40px;*/
+			font-size: 5vmin;
+			padding: 60px;
+			margin-left: 5%;
+		}
+
+		#katrina-infos{
+			margin-top: 100px;
+		}
+
+		.katrina-info{
+			width: 15%;
+			display: inline-block;
+			vertical-align: bottom;
+			text-align: center;
+			margin-left: 22%;
+			font-size: 40px;
+		}
+
+		#katrina-gdp{
+			margin-top: 100px;
+		}
+
+		#social-info{
+			display: none;
+		}
+
+		#residents{
+			text-align: center;
+			font-size: 5vmin;
+		}
+
+		#katrina-residents{
+			font-size: 6vmin;
+			color: #33ccff;
+		}
+
+		#death-count{
+			margin-top: 50px;
+		}
+
+		#katrina-social-facts{
+			margin-top: 100px;
+		}
+
+		.katrina-social-fact{
+			width: 20%;
+			font-size:5vmin;
+			text-align: center;
+			display: inline-block;
+			vertical-align: center;
+			margin-left: 10%;
+		}
+
+		#katrina-heart-attack{
+			margin-top: 100px;
+			text-align: center;
+			font-size: 4vmin;
+			color: #33ccff;
+		}
+
+		#katrina-statistics{
+			margin-top: 100px;
+		}
+
+		.katrina-statistic{
+			width: 15%;
+			border: #33ccff solid;
+			border-radius: 100%;
+			display: inline-block;
+			height: 225px;
+			font-size: 3vmin;
+			padding: 30px;
+			text-align: center;
+			margin-left: 4%;
+			vertical-align: bottom;
+		}
+
+		#political-info{
+			display: none;
+		}
+
+		#louisiana{
+			margin-top: 100px;
+			text-align: center;
+			font-size: 6vmin;
+			color: #ff6699;
+		}
+
+		#katrina-political-infos{
+			margin-top: 100px;
+		}
+
+		.katrina-political-info{
+			width: 30%;
+			display: inline-block;
+			border: #ff6699 solid;
+			height: 450px;
+			border-radius: 100%;
+			font-size: 5vmin;
+			vertical-align: bottom;
+			padding: 80px;
+			padding-top: 50px;
+			text-align: center;
+			margin-left: 14%;
+		}
+
+	</style>
+
+	<script type="text/javascript">
+		// $("#map").height($(window).height()-5);
+
+$(document).ready(function(){
+
+		//hover animations
+		$("#econ-btn").mouseenter(function(){
+			$(this).stop().animate({"background-color":" #ff9900"}, 250);
+			$(this).css("color","white");
+		});
+
+		$("#econ-btn").mouseleave(function(){
+			$(this).stop().animate({"background-color":" white"}, 250);
+			$(this).css("color","black");
+		});
+
+		$("#social-btn").mouseenter(function(){
+			$(this).stop().animate({"background-color":"  #33ccff"}, 250);
+			$(this).css("color","white");
+		});
+
+		$("#social-btn").mouseleave(function(){
+			$(this).stop().animate({"background-color":" white"}, 250);
+			$(this).css("color","black");
+		});
+
+		$("#politic-btn").mouseenter(function(){
+			$(this).stop().animate({"background-color":" #ff6699"}, 250);
+			$(this).css("color","white");
+		});
+
+		$("#politic-btn").mouseleave(function(){
+			$(this).stop().animate({"background-color":" white"}, 250);
+			$(this).css("color","black");
+		});
+
+		//hide and show divs
+		$("#econ-btn").click(function(){
+			$(".info-container").hide();
+			$("#econ-info").show();
+		});
+
+		$("#social-btn").click(function(){
+			$(".info-container").hide();
+			$("#social-info").show();
+		});
+
+		$("#politic-btn").click(function(){
+			$(".info-container").hide();
+			$("#political-info").show();
+		});
+
+		// Katrina cost graph
+		var options_cost_graph = {
+			animationEnabled: true,
+			title: {
+				text: "Katrina Cost Breakdown"
+			},
+			axisY: {
+				title: "Cost (Billions)",
+				includeZero: false
+			},
+			axisX: {
+				title: "Sources"
+			},
+			data: [{
+				type: "column",
+				yValueFormatString: "#,##0.0#"%"",
+				dataPoints: [
+					{ label: "Uninsured", y: 215 },	
+					{ label: "Insured", y: 35 }
+				]
+			}]
+		};
+		$("#katrina-cost-graph").CanvasJSChart(options_cost_graph);	
+
+		// Second Graph
+		var options_graph_two = {
+			animationEnabled: true,
+			title: {
+				text: ""
+			},
+			axisY: {
+				title: "Cost (Billions)",
+				includeZero: false
+			},
+			axisX: {
+				title: ""
+			},
+			data: [{
+				type: "column",
+				yValueFormatString: "#,##0.0#"%"",
+				dataPoints: [
+					{ label: "Avg. cost of severe storm", y: 2.2 },	
+					{ label: "Cost of Katrina", y: 250 }
+				]
+			}]
+		};
+		$("#katrina-graph-two").CanvasJSChart(options_graph_two);
+
+		//Katrina Circles
+		$(".katrina-circle").height($(".katrina-circle").width());
+
+		//Katrina Infos
+		$(".katrina-info").height($(".katrina-info").width());
+
+		//Katrina GDP Graph
+		var options_gdp_graph = {
+			animationEnabled: true,
+			title: {
+				text: "Property Damage by Hurricane as share of GDP"
+			},
+			axisY: {
+				title: "Percent of GDP",
+				includeZero: false
+			},
+			axisX: {
+				title: "Hurricane"
+			},
+			data: [{
+				type: "column",
+				yValueFormatString: "#,##0.0#"%"",
+				dataPoints: [
+					{ label: "katrina, 2005", y: 0.95 },	
+					{ label: "Andrew, 1992", y: 0.4 },
+		          	{ label: "Ike, 2008", y: 0.2 },
+		          	{ label: "Betsy, 1965", y: 0.18 },
+		          	{ label: "Ivan, 2004", y: 0.16 },
+		          	{ label: "Agnes, 1972", y: 0.15 },
+		          	{ label: "Hugo, 1989", y: 0.15 },
+		          	{ label: "Harvey, 2017", y: 0.14 },
+		          	{ label: "Wilma, 2005", y: 0.13 },
+				]
+			}]
+		};
+		$("#katrina-gdp-graph").CanvasJSChart(options_gdp_graph);
+
+		var katrina_death_graph = {
+			animationEnabled: true,
+			title: {
+				text: "U.S Death Toll from Large Hurricanes"
+			},
+			axisY: {
+				title: "People",
+				includeZero: false
+			},
+			axisX: {
+				title: "Hurricane"
+			},
+			data: [{
+				type: "column",
+				yValueFormatString: "#,##0.0#"%"",
+				dataPoints: [
+					{ label: "Andrew, 19992", y: 23 },	
+					{ label: "Charley, 2004", y: 13 },
+		          	{ label: "Katrina, 2005", y: 1200 },
+		          	{ label: "Harvey, 2017", y: 60 }
+				]
+			}]
+		};
+		$("#katrina-death-graph").CanvasJSChart(katrina_death_graph);
+
+		var katrina_death_chart = {
+			title: {
+				text: "Death Percentage by Age"
+			},
+			subtitles: [{
+				text: ""
+			}],
+			animationEnabled: true,
+			data: [{
+				type: "pie",
+				startAngle: 40,
+				toolTipContent: "<b>{label}</b>: {y}%",
+				showInLegend: "true",
+				legendText: "{label}",
+				indexLabelFontSize: 16,
+				indexLabel: "{label} - {y}%",
+				dataPoints: [
+					{ y: 71, label: "60 or older" },
+					{ y: 29, label: "Younger than 60" }
+				]
+			}]
+		};
+		$("#katrina-death-chart").CanvasJSChart(katrina_death_chart);
+
+		var limit = 2006;    //increase number of dataPoints by increasing the limit
+		var y = 10;    
+		var data = [];
+		var dataSeries = { type: "line" };
+		var dataPoints = [
+		  {x: 2000, y:60},
+		  {x: 2001, y:70},
+		  {x: 2002, y:90},
+		  {x: 2003, y:80},
+		  {x: 2004, y:80},
+		  {x: 2005, y:50},
+		  {x: 2006, y:40},
+		  {x: 2007, y:30}
+		  
+		];
+		
+		dataSeries.dataPoints = dataPoints;
+		data.push(dataSeries);
+		
+		//Better to construct options first and then pass it as a parameter
+		var options_approval_rating = {
+			zoomEnabled: true,
+			animationEnabled: true,
+			title: {
+				text: "George Bush Approval Rating"
+			},
+			axisY: {
+				includeZero: false
+			},
+			data: data  // random data
+		};
+		$("#approval-rating").CanvasJSChart(options_approval_rating);
+
+		// var city_map = {
+		// 	new_orleans: {
+		// 		center: {lat: 29.949, lng: -90.07},
+		// 		population: 391495
+		// 	}
+		// };
+
+      	// First, create an object containing LatLng and population for each city.
+      	// var citymap = {
+      	//   chicago: {
+      	//     center: {lat: 41.878, lng: -87.629},
+      	//     population: 2714856
+      	//   },
+      	//   newyork: {
+      	//     center: {lat: 40.714, lng: -74.005},
+      	//     population: 8405837
+      	//   },
+      	//   losangeles: {
+      	//     center: {lat: 34.052, lng: -118.243},
+      	//     population: 3857799
+      	//   },
+      	//   vancouver: {
+      	//     center: {lat: 49.25, lng: -123.1},
+      	//     population: 603502
+      	//   }
+      	// };
+
+      	function initMap() {
+      	  var myLatLng = {lat: 29.9499, lng: -90.07};
+	
+      	  // Create a map object and specify the DOM element
+      	  // for display.
+      	  // var map = new google.maps.Map(document.getElementById('map'), {
+      	  //   center: myLatLng,
+      	  //   zoom: 4
+      	  // });
+	
+      	  // Create a marker and set its position.
+      	  var marker = new google.maps.Marker({
+      	    map: map,
+      	    position: myLatLng,
+      	    title: 'Hello World!'
+      	  });
+
+        	// Construct the circle for each value in citymap.
+        	// Note: We scale the area of the circle based on the population.
+        	// for (var city in citymap) {
+        	//   // Add the circle for this city to the map.
+        	//   var cityCircle = new google.maps.Circle({
+        	//     strokeColor: '#FF0000',
+        	//     strokeOpacity: 0.8,
+        	//     strokeWeight: 2,
+        	//     fillColor: '#FF0000',
+        	//     fillOpacity: 0.35,
+        	//     map: map,
+        	//     center: citymap[city].center,
+        	//     radius: Math.sqrt(citymap[city].population) * 100
+        	//   });
+        	// }
+
+      	}
+});
+
+	</script>
+
+</body>
+</html>
